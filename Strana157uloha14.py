@@ -5,7 +5,7 @@ cislo = od+(do - od)//2 # cislo uprostred intervalu
 
 """ozaj = input("tak ake cislo si si vymysliel? ")
 if ozaj.isdigit(): #kontrola ci odpoved bola v cislicach
-    print("Ozaj, som myslela, ze to bude trvat dlhsie")"""
+    print("Ozaj? Som myslela, ze to bude trvat dlhsie")"""
 
 print("Dalej ak tvoje cislo bude vatsie ako to ktore ti ukazem pis V ako mensie M alebo JE ked uhadnem")
 
