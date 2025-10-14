@@ -4,7 +4,7 @@ c = tkinter.Canvas(width=600,height=400, bg='black')
 c.pack()
 vyska=()
 for i in range(9):
-        vyska = vyska+ (randint(50,300),)
+        vyska = vyska+ (randint(50,300),) 
 def ekvalizer():
     c.delete("all")
     global vyska
