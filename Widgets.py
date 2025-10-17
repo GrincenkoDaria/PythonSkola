@@ -1,6 +1,7 @@
 import tkinter as tk
 
 def Canvas2Radiobutton():
+    # Radiobutton funguje tak ze vy mozete si vybrat iba jedno z viacerych zo zoznamu
     okno2 = tk.Toplevel(root)
     okno2.title("Radiobutton")
 
@@ -30,6 +31,7 @@ def Canvas2Radiobutton():
             canvas2.create_text(sur.x, sur.y, text='['+str(sur.x)+','+str(sur.y)+']')
     canvas2.bind('<Button-1>', klik)
 def Canvas3Scale():
+    # Scale posuvanim "jazycka", meni hodnotu 
     okno3 = tk.Toplevel(root)
     okno3.title("Scale")
 
@@ -60,6 +62,7 @@ def Canvas3Scale():
     scale2.place(x=380, y=0)
     scale2.set(ry)
 def Canvas4Checkbutton():
+    # Checkbutton je skoro to iste ako Radiobutton, ale mozete si vybrat viacero bodov zo zonamu
     okno4 = tk.Toplevel(root)
     okno4.title("Checkbutton")
     okno4.configure(bg="#ecf0ae")
@@ -87,6 +90,7 @@ def Canvas4Checkbutton():
     vysledok = tk.Label(okno4, text=None)
     vysledok.pack(pady=20)
 def Canvas5Scrollbar():
+    #Namiesto pouzitia velkeho okna mozme mat male s informaciou, ktoru si posuvame s pomocou Scrollbar
     okno5 = tk.Toplevel(root)
     okno5.title("Scrollbar")
     okno5.configure(bg="#c6f0ae")  
@@ -102,6 +106,7 @@ def Canvas5Scrollbar():
         mylist.insert(tk.END, str(i))
     scroll_bar.config(command=mylist.yview)
 def Canvas6Listbox():
+    # Listbox to je graficky zoznam veci, ktore si mozes vybrat, pridat alebo vymazat
     okno6 = tk.Toplevel(root)
     okno6.title("Listbox")
     
@@ -134,6 +139,7 @@ def Canvas6Listbox():
     button2 = tk.Button(canvas6,text='Vymaž označenú farbu', command=vymaz)
     button2.pack()
 def Canvas7Progressbar():
+    #Progressbar nam ukazuje kolko % z urciteho processu preslo
     from tkinter import ttk
     okno7 = tk.Toplevel(root)
     okno7.title("Progressbar")
@@ -154,15 +160,9 @@ def Canvas7Progressbar():
     button = tk.Button(canvas7, text="Download", command=zacat)
     button.pack()
 
-
-
-
-
-    
 #hlavne okno
 root = tk.Tk()
 root.title("Hlavne okno")
-00
 #vytvorime menu 
 menu_bar = tk.Menu(root)
 root.config(menu= menu_bar)
