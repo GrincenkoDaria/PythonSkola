@@ -1,11 +1,15 @@
 import tkinter as tk
 
 def Canvas2Radiobutton():
+    # Radiobutton funguje tak ze vy mozete si vybrat iba jedno z viacerych zo zoznamu
     okno2 = tk.Toplevel(root)
     okno2.title("Radiobutton")
 
     canvas2 = tk.Canvas(okno2, width=400, height=300, bg = "#f0aeae")
     canvas2.pack(padx=10, pady=10)
+    
+    label2 = tk.Label(okno2, text="Vyber si co chces nakreslit a klikni po ruzevej casti obrazovky" )
+    label2.pack()
     v = tk.IntVar()
     radiobutton1 = tk.Radiobutton(okno2,text='kruh', variable=v, value=1)
     radiobutton1.pack()
@@ -27,19 +31,22 @@ def Canvas2Radiobutton():
             canvas2.create_text(sur.x, sur.y, text='['+str(sur.x)+','+str(sur.y)+']')
     canvas2.bind('<Button-1>', klik)
 def Canvas3Scale():
+    # Scale posuvanim "jazycka", meni hodnotu 
     okno3 = tk.Toplevel(root)
     okno3.title("Scale")
 
     canvas3 = tk.Canvas(okno3, width=400, height=300, bg = "#f0dbae")
     canvas3.pack(padx=10, pady=10)
+    label3 = tk.Label(okno3, text="Posuvaj scale a tym men velkost kruhu" )
+    label3.pack()
     rx, ry = 100, 50
     x, y = 200, 100
     canvas3.create_oval(x-rx, y-ry, x+rx, y+ry, width=5, outline="#f8b629",tags='oval')
-    def zmena1(val):
+    def zmena1(event):
         global rx
         rx = scale1.get()
         prekresli()
-    def zmena2(val):
+    def zmena2(event):
         global ry
         ry = scale2.get()
         prekresli()
@@ -55,10 +62,11 @@ def Canvas3Scale():
     scale2.place(x=380, y=0)
     scale2.set(ry)
 def Canvas4Checkbutton():
+    # Checkbutton je skoro to iste ako Radiobutton, ale mozete si vybrat viacero bodov zo zonamu
     okno4 = tk.Toplevel(root)
     okno4.title("Checkbutton")
     okno4.configure(bg="#ecf0ae")
-
+    
     label1 = tk.Label(okno4, text='Z ktorého predmetu idete maturovať?')
     label1.pack(pady=(20, 10))
 
@@ -82,11 +90,14 @@ def Canvas4Checkbutton():
     vysledok = tk.Label(okno4, text=None)
     vysledok.pack(pady=20)
 def Canvas5Scrollbar():
+    #Namiesto pouzitia velkeho okna mozme mat male s informaciou, ktoru si posuvame s pomocou Scrollbar
     okno5 = tk.Toplevel(root)
     okno5.title("Scrollbar")
     okno5.configure(bg="#c6f0ae")  
     frame = tk.Frame(okno5)
     frame.pack(padx=10, pady=10, fill="both", expand=True)
+    label5 = tk.Label(okno5, text="Toc kolieskom a sa ti budu menit cisla" )
+    label5.pack()
     scroll_bar = tk.Scrollbar(frame)
     scroll_bar.pack(side="right")
     mylist = tk.Listbox(frame, width=25, height=15)
@@ -95,10 +106,14 @@ def Canvas5Scrollbar():
         mylist.insert(tk.END, str(i))
     scroll_bar.config(command=mylist.yview)
 def Canvas6Listbox():
+    # Listbox to je graficky zoznam veci, ktore si mozes vybrat, pridat alebo vymazat
     okno6 = tk.Toplevel(root)
     okno6.title("Listbox")
-
+    
     canvas6 = tk.Canvas(okno6, width=400, height=300, bg = "#aef0e7")
+    
+    label6 = tk.Label(okno6, text="Sprav dvojklik po farbe z listboxu a sa ti zmeni farba pozadia" )
+    label6.pack()
     canvas6.pack(padx=10, pady=10)
     def prefarbi(event):
         oznacene = listbox1.curselection()
@@ -124,9 +139,12 @@ def Canvas6Listbox():
     button2 = tk.Button(canvas6,text='Vymaž označenú farbu', command=vymaz)
     button2.pack()
 def Canvas7Progressbar():
+    #Progressbar nam ukazuje kolko % z urciteho processu preslo
     from tkinter import ttk
     okno7 = tk.Toplevel(root)
     okno7.title("Progressbar")
+    label7 = tk.Label(okno7, text="Stlac tlacidlo a sa zacne posuvat progressbar" )
+    label7.pack()
     canvas7 = tk.Canvas(okno7, bg="#e4aef0")
     canvas7.pack(fill="both", expand=True, padx=10, pady=10)
     style = ttk.Style()
@@ -138,13 +156,13 @@ def Canvas7Progressbar():
     def zacat():
         progressbar.start(10)
           
+
     button = tk.Button(canvas7, text="Download", command=zacat)
     button.pack()
-    
+
 #hlavne okno
 root = tk.Tk()
 root.title("Hlavne okno")
-00
 #vytvorime menu 
 menu_bar = tk.Menu(root)
 root.config(menu= menu_bar)
