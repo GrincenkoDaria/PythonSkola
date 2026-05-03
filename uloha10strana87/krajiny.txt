@@ -1,0 +1,6 @@
+Taliansko;True;green,white,red;301340;59000000;5500000
+Francuzsko;True;blue,white,red;551695;68000000;3000000
+Nemecko;False;black,red,gold;357588;83000000;12000000
+Madarsko;False;red,white,green;93030;9600000;700000
+Rumunsko;True;blue,yellow,red;238397;19000000;4000000
+Rusko;False;white,blue,red;17098242;146000000;10000000
