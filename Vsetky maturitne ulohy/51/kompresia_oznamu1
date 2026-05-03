@@ -1,0 +1,33 @@
+
+text = input()
+def kompresia(text):
+    velke = True
+    vystup = ''
+    t = text.split()
+    for i in t:
+        if velke:
+            vystup += i.upper()
+        else:
+            vystup += i.lower()
+        velke = not velke
+    return vystup
+def dekompresia(text):
+    velke = True
+    vystup = text[0]
+    koniec = ''
+    for i in text[1:]:
+        if velke:
+            if 95<=ord(i)<=122:
+                koniec +=" "+i
+                velke = not velke
+            else:
+                koniec += i
+        else:
+            if 65<=ord(i)<=90:
+                koniec+=" "+i
+                velke = not velke
+            else:
+                koniec += i
+    return vystup+koniec.lower()
+print(kompresia(text))
+print(dekompresia(kompresia(text)))

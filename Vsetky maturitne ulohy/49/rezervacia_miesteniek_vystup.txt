@@ -1,0 +1,4 @@
+ X  5  9  X  X 21 25  X 33 37
+ 2  X  X 14  X  X  X 30  X  X
+ 3  X  X 15  X  X  X 31  X  X
+ X  8 12  X  X 24 28  X 36 40
